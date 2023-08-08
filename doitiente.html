@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doitien</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><label for="amount"></label><input type="text" id="amount"></td>
+        <td><label for="from"></label><select id="from">
+            <option value="VND">
+                VND
+            </option>
+            <option value="USD">USD</option>
+        </select></td>
+        <td>
+            <label for="to"></label><select id="to">
+                <option value="VND">
+                    VND
+                </option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="money()">Convert</button>
+        </td>
+    </tr>
+</table>
+<b><p id="ketqua"></p></b>
+<script>
+    function money() {
+        let Amount = document.getElementById('amount').value;
+        let FromV = document.getElementById('from').value;
+        let ToU = document.getElementById('to').value;
+        let ketqua;
+        if (FromV == "USD" && ToU == "VND") {
+            ketqua = "ketqua:" + (Amount * 23000) + "   Đ";
+        } else if (FromV == "VND" && ToU == "USD") {
+            ketqua = "ketqua:" + (Amount / 23000) + "     $"
+        } else if (FromV == "VND") {
+            ketqua = "ketqua:" + Amount + "   Đ"
+        } else {
+            ketqua = "ketqua:" + Amount + "   $"
+        }
+        document.getElementById('ketqua').innerHTML = ketqua;
+
+    }
+</script>
+</body>
+</html>
