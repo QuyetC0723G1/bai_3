@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dientichhinhtron</title>
+</head>
+<body>
+<div>
+    <h2 style="background-color: chocolate">Doi Nhiet Do</h2>
+    <input type="number" id="nhietdo1" placeholder="do C">
+    <button onclick="doinhietdo()">
+        Click
+    </button><b>
+    <p id="result2">
+
+    </p>
+</b>
+</div>
+<div>
+    <h2>TINH CHU VI</h2>
+    <input type="text" id="chuvi" placeholder="ban kinh">
+    <button onclick="tinhchuvi()">Click</button><b><p id="ketqua"></p></b>
+</div>
+<div> <H2>TINH DIEM TRUNG BINH</H2>
+    <input type="text" id="mon1" placeholder="vat ly">
+    <input type="text" id="mon2" placeholder="hoahoc">
+    <input type="text" id="mon3" placeholder="sinh hoc">
+    <button onclick="tinhtrungbinh()">click
+    </button>
+    <b><p id="phon1"></p></b>
+</div>
+<div>
+    <h2>DIEN TICH HINH TRON</h2>
+    <input type="text" id="dientich" placeholder="ban kinh">
+    <button onclick="tinhdientich()">Click</button>
+    <b>
+        <p id="result"></p>
+    </b>
+</div>
+<script>
+    function tinhtrungbinh() {
+        let a = +document.getElementById('mon1').value
+        let b = +document.getElementById('mon2').value
+        let c = +document.getElementById('mon3').value
+        let d = (a + b + c)
+        document.getElementById('phon1').innerHTML = "Total=" + d + "  diemtrungbinh=" + d / 3;
+    }
+
+    function tinhdientich() {
+        let chuvi = document.getElementById('dientich').value;
+        let p = 3.14;
+        document.getElementById('result').innerHTML = (chuvi * chuvi) * p;
+    }
+
+function tinhchuvi(){
+        let chuvi1 = document.getElementById('chuvi').value
+    document.getElementById('ketqua').innerHTML= chuvi1*2*3.14;
+}
+    function doinhietdo(){
+        let a = document.getElementById('nhietdo1').value
+        document.getElementById('result2').innerHTML= a*(9/5)+32 +   '    F';
+    }
+</script>
+</body>
+</html>
